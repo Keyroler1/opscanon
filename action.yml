@@ -1,0 +1,59 @@
+name: RepoHandoff
+description: Audit repos, docs, and MCP servers for AI-agent readiness.
+author: RepoHandoff
+
+inputs:
+  path:
+    description: Repository path to audit.
+    required: false
+    default: .
+  out:
+    description: Directory for RepoHandoff report artifacts.
+    required: false
+    default: repohandoff-artifacts
+  comment:
+    description: Post a PR comment when GitHub token and PR context are available.
+    required: false
+    default: "false"
+  github-token:
+    description: Token used for optional PR comments.
+    required: false
+    default: ""
+  llm:
+    description: Run optional OpenAI synthesis when OPENAI_API_KEY is present.
+    required: false
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    - name: Install RepoHandoff action dependencies
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: npm ci
+
+    - name: Build RepoHandoff action
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: npm run build
+
+    - name: Run RepoHandoff
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+      run: |
+        set -euo pipefail
+        args=(ci "${{ inputs.path }}" --out "${{ inputs.out }}")
+        if [ "${{ inputs.comment }}" = "true" ]; then
+          args+=(--comment)
+        fi
+        if [ "${{ inputs.llm }}" = "true" ]; then
+          args+=(--llm)
+        fi
+        node "${{ github.action_path }}/dist/cli.js" "${args[@]}"
+
+    - name: Upload RepoHandoff artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: repohandoff-report
+        path: ${{ inputs.out }}

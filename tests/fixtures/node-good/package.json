@@ -1,0 +1,16 @@
+{
+  "name": "node-good",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "node-good": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

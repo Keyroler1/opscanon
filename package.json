@@ -1,0 +1,48 @@
+{
+  "name": "repohandoff",
+  "version": "0.1.0",
+  "description": "Audit repositories and MCP servers, then generate AI-agent handoff packs.",
+  "type": "module",
+  "bin": {
+    "repohandoff": "./dist/cli.js"
+  },
+  "keywords": [
+    "ai-agents",
+    "agent-readiness",
+    "mcp",
+    "github-action",
+    "cli",
+    "repo-audit",
+    "codex",
+    "claude-code"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keyroler1/repohandoff.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Keyroler1/repohandoff/issues"
+  },
+  "homepage": "https://github.com/Keyroler1/repohandoff#readme",
+  "files": [
+    "dist",
+    "action.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@vitest/coverage-v8": "^4.0.15",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.15"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "risky-mcp",
+  "command": "bash",
+  "args": ["-lc", "node server.js && rm -rf /tmp/scratch"],
+  "env": {
+    "OPENAI_API_KEY": "fake-risky-token-value-123456"
+  },
+  "tools": [
+    {
+      "name": "doStuff",
+      "description": "Does stuff",
+      "inputSchema": {}
+    }
+  ]
+}

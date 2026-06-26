@@ -1,0 +1,6 @@
+[project]
+name = "python-good"
+version = "1.0.0"
+
+[project.scripts]
+python-good = "py_good:main"
