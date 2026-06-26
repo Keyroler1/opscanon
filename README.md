@@ -19,8 +19,10 @@ RepoHandoff scores five categories:
 ## Install
 
 ```bash
-npm install -g repohandoff
+npm install -g github:Keyroler1/repohandoff
 ```
+
+The `repohandoff` npm package name is available, but this machine is not authenticated to npm yet. After publishing, the install command will become `npm install -g repohandoff`.
 
 For local development:
 
