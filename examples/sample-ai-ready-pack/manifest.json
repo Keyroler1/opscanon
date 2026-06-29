@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "safeToBuild": true,
+  "packQualityScore": 86,
+  "counts": {
+    "totalFiles": 5,
+    "compileReady": 4,
+    "review": 1,
+    "duplicates": 0,
+    "stale": 0,
+    "unreadable": 0,
+    "noise": 0,
+    "conflicts": 0
+  },
+  "artifacts": [
+    "cleaned-sources/",
+    "source-inventory.json",
+    "document-quality-report.md",
+    "client-cleanup-checklist.md",
+    "review-dashboard.html"
+  ],
+  "nextCommands": [
+    "opscanon review ai-ready-pack",
+    "opscanon approve ai-ready-pack --out approved-pack",
+    "opscanon build --prepared approved-pack --out company-brain"
+  ]
+}

@@ -1,34 +1,44 @@
 {
-  "name": "ai-repo-readiness",
+  "name": "opscanon",
   "version": "0.1.0",
-  "description": "Audit repositories and MCP servers, then generate AI-agent handoff packs.",
+  "description": "Turn messy company knowledge into verified agent skills and MCP-ready company brains.",
   "type": "module",
   "bin": {
-    "ai-repo-readiness": "./dist/cli.js"
+    "opscanon": "./dist/cli.js",
+    "ai-repo-readiness": "./dist/cli.js",
+    "company-brain": "./dist/cli.js"
   },
   "keywords": [
+    "opscanon",
     "ai-agents",
     "agent-readiness",
     "mcp",
     "github-action",
     "cli",
     "repo-audit",
+    "company-brain",
+    "knowledge-ops",
+    "skillops",
     "codex",
     "claude-code"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Keyroler1/ai-repo-readiness.git"
+    "url": "git+https://github.com/Keyroler1/opscanon.git"
   },
   "bugs": {
-    "url": "https://github.com/Keyroler1/ai-repo-readiness/issues"
+    "url": "https://github.com/Keyroler1/opscanon/issues"
   },
-  "homepage": "https://github.com/Keyroler1/ai-repo-readiness#readme",
+  "homepage": "https://github.com/Keyroler1/opscanon#readme",
   "files": [
     "dist",
     "action.yml",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md",
+    "docs",
+    "examples",
+    "site"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",

@@ -13,7 +13,7 @@ describe('report rendering', () => {
       const markdown = renderMarkdownReport(report)
       const json = JSON.stringify(report)
 
-      expect(markdown).toContain('# AI Repo Readiness Report')
+      expect(markdown).toContain('# OpsCanon Repo Readiness Report')
       expect(markdown).toContain('Overall score')
       expect(markdown).not.toContain('fake-risky-token-value-123456')
       expect(json).not.toContain('fake-risky-token-value-123456')

@@ -1,0 +1,35 @@
+name: Company brain gap
+description: Report a missing workflow, review gap, or generated-skill issue.
+title: "[brain-gap] "
+labels: ["company-brain", "feedback"]
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Workflow or knowledge gap
+      description: What operating knowledge was missing, wrong, stale, or unsafe?
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source evidence
+      description: Which input file, ticket, doc, or review item should have covered this?
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Impact
+      options:
+        - Blocks automation
+        - Needs human review
+        - Documentation issue
+        - Nice to have
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should OpsCanon generate or ask the human to clarify?

@@ -3,4 +3,10 @@ dist/
 coverage/
 agentready-pack/
 agentready-artifacts/
+opscanon-demo/
+opscanon-artifacts/
+opscanon-repo-pack/
+ai-ready-pack/
+approved-pack/
+company-brain/
 *.log

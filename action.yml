@@ -1,6 +1,6 @@
-name: AI Repo Readiness
-description: Audit repos, docs, and MCP servers for AI-agent readiness.
-author: AI Repo Readiness
+name: OpsCanon
+description: Audit repo readiness and build verified operating knowledge for AI agents.
+author: OpsCanon
 
 inputs:
   path:
@@ -8,9 +8,9 @@ inputs:
     required: false
     default: .
   out:
-    description: Directory for AI Repo Readiness report artifacts.
+    description: Directory for OpsCanon report artifacts.
     required: false
-    default: ai-repo-readiness-artifacts
+    default: opscanon-artifacts
   comment:
     description: Post a PR comment when GitHub token and PR context are available.
     required: false
@@ -27,17 +27,17 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Install AI Repo Readiness action dependencies
+    - name: Install OpsCanon action dependencies
       shell: bash
       working-directory: ${{ github.action_path }}
       run: npm ci
 
-    - name: Build AI Repo Readiness action
+    - name: Build OpsCanon action
       shell: bash
       working-directory: ${{ github.action_path }}
       run: npm run build
 
-    - name: Run AI Repo Readiness
+    - name: Run OpsCanon
       shell: bash
       env:
         GITHUB_TOKEN: ${{ inputs.github-token }}
@@ -52,8 +52,8 @@ runs:
         fi
         node "${{ github.action_path }}/dist/cli.js" "${args[@]}"
 
-    - name: Upload AI Repo Readiness artifacts
+    - name: Upload OpsCanon artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: ai-repo-readiness-report
+        name: opscanon-report
         path: ${{ inputs.out }}

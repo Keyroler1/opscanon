@@ -21,7 +21,7 @@ export async function synthesizeAgentReadinessNotes(
   const model = env.AI_REPO_READINESS_OPENAI_MODEL ?? 'gpt-4.1-mini'
   const prompt = [
     'You are helping improve a software repository for AI coding agents.',
-    'Summarize the most important AI Repo Readiness fixes in under 180 words.',
+    'Summarize the most important OpsCanon repo readiness fixes in under 180 words.',
     'Do not include secrets, credentials, or token values.',
     '',
     JSON.stringify({

@@ -58,8 +58,8 @@ describe('CLI', () => {
       })
 
       expect(exitCode).toBe(0)
-      await expect(readFile(join(outDir, 'ai-repo-readiness-report.md'), 'utf8')).resolves.toContain('# AI Repo Readiness Report')
-      await expect(readFile(join(outDir, 'ai-repo-readiness-report.json'), 'utf8')).resolves.toContain('overallScore')
+      await expect(readFile(join(outDir, 'opscanon-report.md'), 'utf8')).resolves.toContain('# OpsCanon Repo Readiness Report')
+      await expect(readFile(join(outDir, 'opscanon-report.json'), 'utf8')).resolves.toContain('overallScore')
     } finally {
       await removeTempDir(tempDir)
     }

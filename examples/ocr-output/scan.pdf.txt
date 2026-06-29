@@ -1,0 +1,6 @@
+# Billing Exception Snapshot
+
+Owner: Finance lead
+When a billing exception appears in QuickBooks, Controller reviews invoice amount and customer contract.
+Billing changes require Finance lead approval before updating QuickBooks.
+Output: approved billing adjustment or rejected billing adjustment.

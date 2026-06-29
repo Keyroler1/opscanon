@@ -52,7 +52,7 @@ export interface ScoreCategory {
 }
 
 export interface AuditReport {
-  tool: 'ai-repo-readiness'
+  tool: 'opscanon'
   version: string
   generatedAt: string
   repo: {

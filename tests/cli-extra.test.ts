@@ -26,7 +26,8 @@ describe('CLI secondary paths', () => {
       env: {}
     })).resolves.toBe(1)
 
-    expect(stdout.join('')).toContain('AI Repo Readiness')
+    expect(stdout.join('')).toContain('OpsCanon')
+    expect(stdout.join('')).toContain('Turn messy company knowledge into verified agent skills')
     expect(stderr.join('')).toContain('Unknown command')
   })
 
@@ -49,7 +50,7 @@ describe('CLI secondary paths', () => {
         env: {}
       })).resolves.toBe(2)
 
-      expect(stdout.join('')).toContain('# AI Repo Readiness Report')
+      expect(stdout.join('')).toContain('# OpsCanon Repo Readiness Report')
     } finally {
       await removeTempDir(tempDir)
     }
@@ -127,7 +128,7 @@ describe('CLI secondary paths', () => {
         }
       })).resolves.toBe(0)
 
-      await expect(readFile(summaryPath, 'utf8')).resolves.toContain('# AI Repo Readiness Report')
+      await expect(readFile(summaryPath, 'utf8')).resolves.toContain('# OpsCanon Repo Readiness Report')
       expect(errors.join('')).toContain('HTTP 500')
     } finally {
       await removeTempDir(tempDir)

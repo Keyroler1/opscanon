@@ -4,7 +4,7 @@ import { redactSecrets, findSecretAssignments, isLikelySecretValue } from '../sr
 import type { AuditReport } from '../src/types.js'
 
 const report: AuditReport = {
-  tool: 'ai-repo-readiness',
+  tool: 'opscanon',
   version: '0.1.0',
   generatedAt: '1970-01-01T00:00:00.000Z',
   repo: { name: 'repo', path: '/repo' },

@@ -1,0 +1,35 @@
+name: Connector request
+description: Request a new source connector for OpsCanon.
+title: "[connector] "
+labels: ["connector", "enhancement"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Source system
+      description: Example Notion, Confluence, Slack, Google Drive, Zendesk, Salesforce, Linear, Jira.
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: What knowledge should OpsCanon extract?
+      description: Describe the procedures, decisions, tickets, chats, docs, or records that matter.
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Preferred integration mode
+      options:
+        - Export folder
+        - Sync folder
+        - OAuth connector
+        - MCP bridge
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Security and approval concerns
+      description: Note secrets, regulated data, retention requirements, or write-action boundaries.

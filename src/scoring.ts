@@ -35,7 +35,7 @@ export function calculateScorecard(signals: RepoSignals, mcpResults: McpScanResu
   const { rootPath: _rootPath, secretFindings: _secretFindings, ...safeSignals } = signals
 
   return {
-    tool: 'ai-repo-readiness',
+    tool: 'opscanon',
     version: VERSION,
     generatedAt: new Date().toISOString(),
     repo: {
@@ -51,8 +51,8 @@ export function calculateScorecard(signals: RepoSignals, mcpResults: McpScanResu
 
 export function reportOutputPaths(outDir: string): { markdown: string; json: string } {
   return {
-    markdown: join(outDir, 'ai-repo-readiness-report.md'),
-    json: join(outDir, 'ai-repo-readiness-report.json')
+    markdown: join(outDir, 'opscanon-report.md'),
+    json: join(outDir, 'opscanon-report.json')
   }
 }
 

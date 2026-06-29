@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpsCanon - Verified Operating Knowledge For AI Agents</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18212f;
+      --muted: #536173;
+      --line: #d9e0e8;
+      --paper: #fbfcfd;
+      --panel: #ffffff;
+      --green: #2f7d5c;
+      --blue: #2868a8;
+      --amber: #a86d18;
+      --red: #b24b45;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); }
+    a { color: inherit; }
+    header { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; background: rgba(251, 252, 253, 0.92); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+    .brand { font-weight: 700; font-size: 18px; }
+    nav { display: flex; gap: 18px; color: var(--muted); font-size: 14px; }
+    .hero { position: relative; min-height: calc(100vh - 54px); overflow: hidden; display: grid; align-items: center; padding: 56px 28px 96px; border-bottom: 1px solid var(--line); }
+    .preview { position: absolute; inset: 0; padding: 72px 7vw 32px; opacity: 0.28; transform: scale(1.04); transform-origin: center; }
+    .preview-shell { min-width: 920px; height: 100%; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 24px 80px rgba(24, 33, 47, 0.16); overflow: hidden; }
+    .preview-bar { height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 18px; border-bottom: 1px solid var(--line); background: #f3f6f8; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--red); }
+    .dot:nth-child(2) { background: var(--amber); }
+    .dot:nth-child(3) { background: var(--green); }
+    .preview-grid { display: grid; grid-template-columns: 240px 1fr; height: calc(100% - 52px); }
+    .side { border-right: 1px solid var(--line); padding: 18px; background: #f8fafb; }
+    .side div { height: 34px; margin-bottom: 10px; border: 1px solid var(--line); border-radius: 6px; background: white; }
+    .dash { padding: 20px; }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px; }
+    .metric { border: 1px solid var(--line); border-radius: 6px; padding: 12px; background: white; }
+    .metric span { display: block; color: var(--muted); font-size: 12px; }
+    .metric strong { display: block; font-size: 25px; margin-top: 6px; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+    th, td { text-align: left; padding: 12px; border-bottom: 1px solid var(--line); font-size: 13px; }
+    th { background: #eef3f7; color: #3b4858; }
+    .status { font-weight: 700; }
+    .compile { color: var(--green); }
+    .review { color: var(--amber); }
+    .hero-content { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; text-align: center; }
+    h1 { font-size: clamp(42px, 7vw, 86px); line-height: 0.98; margin: 0 0 22px; letter-spacing: 0; }
+    .lead { max-width: 760px; margin: 0 auto 30px; color: #2f3b4b; font-size: 20px; line-height: 1.5; }
+    .actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--ink); border-radius: 6px; text-decoration: none; font-weight: 700; background: var(--ink); color: white; }
+    .button.secondary { background: white; color: var(--ink); }
+    main section { padding: 64px 28px; }
+    .band { border-bottom: 1px solid var(--line); background: white; }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    h2 { font-size: 34px; margin: 0 0 18px; letter-spacing: 0; }
+    .columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .item { border: 1px solid var(--line); border-radius: 8px; padding: 18px; background: var(--panel); }
+    .item h3 { margin: 0 0 8px; font-size: 18px; }
+    .item p { margin: 0; color: var(--muted); line-height: 1.5; }
+    pre { overflow: auto; border: 1px solid var(--line); border-radius: 8px; padding: 18px; background: #17202a; color: #f4f7fa; }
+    @media (max-width: 760px) {
+      header { padding: 12px 18px; }
+      nav { display: none; }
+      .hero { min-height: 760px; padding: 42px 18px 72px; }
+      .preview { padding: 96px 18px 20px; transform: scale(1); opacity: 0.2; }
+      .preview-shell { min-width: 760px; }
+      .lead { font-size: 18px; }
+      .columns { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">OpsCanon</div>
+    <nav>
+      <a href="#workflow">Workflow</a>
+      <a href="#demo">Demo</a>
+      <a href="#buyers">Users</a>
+      <a href="https://github.com/Keyroler1/opscanon">GitHub</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="preview" aria-hidden="true">
+      <div class="preview-shell">
+        <div class="preview-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><strong>AI-Ready Knowledge Review</strong></div>
+        <div class="preview-grid">
+          <div class="side"><div></div><div></div><div></div><div></div><div></div></div>
+          <div class="dash">
+            <div class="metrics">
+              <div class="metric"><span>Pack Score</span><strong>86</strong></div>
+              <div class="metric"><span>Compile Ready</span><strong>12</strong></div>
+              <div class="metric"><span>Needs Review</span><strong>4</strong></div>
+              <div class="metric"><span>Conflicts</span><strong>1</strong></div>
+            </div>
+            <table>
+              <thead><tr><th>Source</th><th>Status</th><th>Owner</th><th>Decision</th></tr></thead>
+              <tbody>
+                <tr><td>support-refunds.md</td><td class="status compile">compile</td><td>Support lead</td><td>Founder approval above $750</td></tr>
+                <tr><td>pricing-exceptions.md</td><td class="status compile">compile</td><td>VP Sales</td><td>Approval above 20 percent</td></tr>
+                <tr><td>old-policy.pdf</td><td class="status review">review</td><td>unknown</td><td>Needs OCR and owner confirmation</td></tr>
+                <tr><td>incident-response.md</td><td class="status compile">compile</td><td>Engineer</td><td>Incident commander approval</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <h1>Turn messy company knowledge into verified agent skills.</h1>
+      <p class="lead">OpsCanon cleans fragmented docs, routes uncertainty to humans, and compiles approved operating knowledge into source-cited skills and MCP-ready company brains.</p>
+      <div class="actions">
+        <a class="button" href="#demo">Run the demo</a>
+        <a class="button secondary" href="https://github.com/Keyroler1/opscanon">View GitHub</a>
+      </div>
+    </div>
+  </section>
+  <main>
+    <section id="workflow" class="band">
+      <div class="wrap">
+        <h2>From raw exports to operating brain</h2>
+        <div class="columns">
+          <div class="item"><h3>Prepare</h3><p>Classify, clean, redact, deduplicate, detect stale or conflicting sources, and produce a human review queue.</p></div>
+          <div class="item"><h3>Approve</h3><p>Route uncertain material to source owners and compile only approved, source-cited operating knowledge.</p></div>
+          <div class="item"><h3>Build</h3><p>Generate skills, action boundaries, evals, freshness reports, and read-only MCP tools for AI agents.</p></div>
+        </div>
+      </div>
+    </section>
+    <section id="demo">
+      <div class="wrap">
+        <h2>Five-minute local demo</h2>
+        <pre><code>npm install -g opscanon
+opscanon demo --out opscanon-demo
+opscanon serve-mcp --brain opscanon-demo/company-brain --dry-run</code></pre>
+      </div>
+    </section>
+    <section id="buyers" class="band">
+      <div class="wrap">
+        <h2>Built for agent adoption teams</h2>
+        <div class="columns">
+          <div class="item"><h3>AI agencies</h3><p>Turn client exports into repeatable onboarding artifacts and cleanup tasks.</p></div>
+          <div class="item"><h3>Ops leads</h3><p>Map how the company works before agents touch customers, billing, or production.</p></div>
+          <div class="item"><h3>Devtool teams</h3><p>Make repos, docs, MCP servers, and support workflows easier for agents to use.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

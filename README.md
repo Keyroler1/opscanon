@@ -1,103 +1,193 @@
-# AI Repo Readiness
+# OpsCanon
 
-AI Repo Readiness audits whether a repository, tool, or MCP server is ready for AI agents to use safely and repeatably.
+Turn messy company knowledge into verified agent skills.
 
-It starts as a CLI and GitHub Action. There is no hosted dashboard, billing system, or required API key in v1.
+OpsCanon cleans fragmented docs, routes uncertainty to humans, and compiles approved operating knowledge into source-cited skills and MCP-ready company brains.
 
-## What It Checks
+It is not enterprise search, a chatbot over documents, or generic document Q&A. It is a local-first operating-knowledge compiler for AI agents.
 
-AI Repo Readiness scores five categories:
+## What It Does
 
-| Category | Weight |
-|---|---:|
-| Agent-facing setup/docs | 25% |
-| Machine interfaces: CLI/API/MCP/OpenAPI | 25% |
-| Repo context quality | 20% |
-| Eval/test reproducibility | 15% |
-| MCP/security boundaries | 15% |
+- Prepares messy exports into `ai-ready-pack/` with cleaned sources, source inventory, duplicate/noise/staleness reports, review queues, unresolved questions, and a static dashboard.
+- Lets humans review and approve weak or uncertain knowledge before it becomes executable.
+- Builds a `company-brain/` with operating model, workflow skills, action boundaries, quality score, eval report, freshness report, and read-only MCP server.
+- Keeps repo-readiness features as a secondary surface under `opscanon repo`.
+- Works deterministically without API keys. Optional LLM synthesis is used only when `--llm` is passed and `OPENAI_API_KEY` is present.
 
 ## Install
 
 ```bash
-npm install -g github:Keyroler1/ai-repo-readiness
+npm install -g opscanon
 ```
-
-The `ai-repo-readiness` npm package name is available, but this machine is not authenticated to npm yet. After publishing, the install command will become `npm install -g ai-repo-readiness`.
 
 For local development:
 
 ```bash
 npm install
 npm run build
-npm link
+node dist/cli.js --help
 ```
 
-## CLI
+The compatibility binaries `ai-repo-readiness` and `company-brain` remain available during migration.
+
+## Five-Minute Demo
 
 ```bash
-ai-repo-readiness audit <path>
-ai-repo-readiness audit <path> --json
-ai-repo-readiness generate <path> --out ai-repo-readiness-pack
-ai-repo-readiness check-mcp <command-or-config>
-ai-repo-readiness ci <path> --out ai-repo-readiness-artifacts
+opscanon demo --out opscanon-demo
 ```
 
-`audit` is read-only and prints to stdout. `generate` writes only to the selected output folder.
+This creates:
 
-## Generated Pack
+- `raw-company-export/`
+- `ai-ready-pack/`
+- `approved-pack/`
+- `company-brain/`
 
-`ai-repo-readiness generate . --out ai-repo-readiness-pack` creates:
+Open `opscanon-demo/ai-ready-pack/review-dashboard.html` to inspect the static review dashboard.
+
+## Core Workflow
+
+```bash
+opscanon prepare ./raw-company-export --out ai-ready-pack --ocr-text ./ocr-output --dashboard
+opscanon review ai-ready-pack
+opscanon approve ai-ready-pack --out approved-pack
+opscanon build --prepared approved-pack --out company-brain
+opscanon score --brain company-brain
+opscanon eval --brain company-brain
+opscanon serve-mcp --brain company-brain --dry-run
+```
+
+Only compile-ready or approved cleaned sources flow into `build`. Low-confidence data becomes questions, not facts.
+
+## Repo Readiness
+
+```bash
+opscanon repo audit .
+opscanon repo audit . --json
+opscanon repo generate . --out opscanon-repo-pack
+opscanon repo check-mcp ./mcp-config.json
+opscanon ci . --out opscanon-artifacts
+```
+
+Repo readiness scores:
+
+- Agent-facing setup/docs: 25%
+- Machine interfaces: CLI/API/MCP/OpenAPI: 25%
+- Repo context quality: 20%
+- Eval/test reproducibility: 15%
+- MCP/security boundaries: 15%
+
+## Outputs
+
+Prepared pack:
+
+- `cleaned-sources/`
+- `source-inventory.json`
+- `document-quality-report.md`
+- `duplicate-report.md`
+- `noise-staleness-report.md`
+- `candidate-operating-knowledge.json`
+- `human-review-queue.md`
+- `client-cleanup-checklist.md`
+- `review-decisions.json`
+- `review-dashboard.html`
+- `ocr-review.md`
+- `unresolved-questions.md`
+
+Company brain:
+
+- `company-profile.md`
+- `operating-model.md` and `operating-model.json`
+- `workflows/`
+- `skills/`
+- `action-boundaries.md`
+- `facts.jsonl`
+- `graph.json`
+- `source-coverage.md`
+- `brain-quality-report.md`
+- `brain-eval-report.md`
+- `mcp-review.md`
+
+Repo pack:
 
 - `AGENTS.md`
 - `repo-map.md`
-- `skills/agent-setup.md`
-- `skills/repo-audit.md`
-- `skills/mcp-safety.md`
+- `skills/`
 - `promptfoo.yaml`
 - `mcp-review.md`
-- `ai-repo-readiness-report.md`
-- `ai-repo-readiness-report.json`
-
-## Optional LLM Synthesis
-
-AI Repo Readiness works deterministically without API keys. If you want a short LLM-written synthesis, pass `--llm` and set `OPENAI_API_KEY`.
-
-```bash
-OPENAI_API_KEY=... ai-repo-readiness generate . --out ai-repo-readiness-pack --llm
-```
-
-If `OPENAI_API_KEY` is missing, the deterministic report still works.
+- `opscanon-report.md`
+- `opscanon-report.json`
 
 ## GitHub Action
 
 ```yaml
-name: AI Repo Readiness
+name: OpsCanon
 
 on:
   pull_request:
+  workflow_dispatch:
 
 jobs:
-  ai-repo-readiness:
+  opscanon:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
-      - uses: your-org/ai-repo-readiness@v0
+      - uses: Keyroler1/opscanon@v0
         with:
           path: .
-          out: ai-repo-readiness-artifacts
+          out: opscanon-artifacts
           comment: "true"
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-The Action uploads `ai-repo-readiness-report.md` and `ai-repo-readiness-report.json` as artifacts and writes the Markdown report to the GitHub step summary.
+The Action uploads `opscanon-report.md` and `opscanon-report.json` and writes the Markdown report to the GitHub step summary.
 
-## Validation Loop
+## MCP
 
-Before treating this as production-ready:
+```bash
+opscanon serve-mcp --brain company-brain
+```
 
-1. Audit 20 public repos.
-2. Generate 5 useful PRs or issue comments.
-3. Get at least 3 maintainers or builders to say they would use it again.
+Read-only tools:
+
+- `search`
+- `fetch`
+- `get_company_profile`
+- `get_operating_model`
+- `get_workflow`
+- `get_action_boundaries`
+- `get_freshness`
+- `get_project_context`
+- `get_recent_decisions`
+
+See `docs/mcp-setup.md` for Codex and Claude-style configuration examples.
+
+## Trust Model
+
+OpsCanon is local-first. Raw exports, prepared packs, review dashboards, approved packs, and compiled brains stay on the machine unless the user explicitly connects external services.
+
+The pipeline redacts common secret patterns before downstream processing. The MCP server is read-only in v1. See `docs/privacy-and-security.md`.
+
+## Distribution
+
+Primary self-serve channels:
+
+- npm package: `opscanon`
+- GitHub repo and releases: `Keyroler1/opscanon`
+- GitHub Action
+- Static docs and examples
+- Read-only MCP server
+
+Paid features can come later: hosted dashboard, managed connectors, scheduled freshness checks, team review workflow, private cloud/on-prem deployment, audit logs, compliance controls, and billing.
+
+## Docs And Examples
+
+- `docs/quickstart.md`
+- `docs/mcp-setup.md`
+- `docs/privacy-and-security.md`
+- `docs/distribution.md`
+- `docs/buyers/`
+- `examples/`
+- `site/index.html`

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OpsCanon Review Dashboard Sample</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #17202a; background: #f7f8fa; }
+    main { max-width: 1100px; margin: 0 auto; }
+    .metrics { display: grid; grid-template-columns: repeat(4, minmax(120px, 1fr)); gap: 12px; margin: 18px 0; }
+    .metric { background: #fff; border: 1px solid #d8dee4; border-radius: 6px; padding: 12px; }
+    .metric strong { display: block; font-size: 24px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #d8dee4; }
+    th, td { padding: 8px; border-bottom: 1px solid #d8dee4; text-align: left; vertical-align: top; }
+    th { background: #eef2f6; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>OpsCanon Review Dashboard Sample</h1>
+  <section class="metrics">
+    <div class="metric"><span>Pack Score</span><strong>86</strong></div>
+    <div class="metric"><span>Compile Ready</span><strong>4</strong></div>
+    <div class="metric"><span>Needs Review</span><strong>1</strong></div>
+    <div class="metric"><span>Conflicts</span><strong>0</strong></div>
+  </section>
+  <table>
+    <thead><tr><th>Path</th><th>Status</th><th>Score</th><th>Owner</th><th>Reason</th></tr></thead>
+    <tbody>
+      <tr><td>support-refunds.md</td><td>compile</td><td>95</td><td>Support lead</td><td>Ready to compile.</td></tr>
+      <tr><td>pricing-exceptions.md</td><td>compile</td><td>95</td><td>VP Sales</td><td>Ready to compile.</td></tr>
+      <tr><td>scan.pdf</td><td>review</td><td>80</td><td>Finance lead</td><td>OCR-derived source should be reviewed before approval.</td></tr>
+    </tbody>
+  </table>
+</main>
+</body>
+</html>
