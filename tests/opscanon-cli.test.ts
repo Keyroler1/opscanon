@@ -56,9 +56,9 @@ describe('OpsCanon CLI migration', () => {
 
     expect(packageJson.name).toBe('opscanon')
     expect(packageJson.bin).toMatchObject({
-      opscanon: './dist/cli.js',
-      'ai-repo-readiness': './dist/cli.js',
-      'company-brain': './dist/cli.js'
+      opscanon: 'dist/cli.js',
+      'ai-repo-readiness': 'dist/cli.js',
+      'company-brain': 'dist/cli.js'
     })
     expect(packageJson.files).toEqual(expect.arrayContaining(['dist', 'action.yml', 'README.md', 'docs', 'examples', 'site']))
   })

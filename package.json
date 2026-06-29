@@ -4,9 +4,9 @@
   "description": "Turn messy company knowledge into verified agent skills and MCP-ready company brains.",
   "type": "module",
   "bin": {
-    "opscanon": "./dist/cli.js",
-    "ai-repo-readiness": "./dist/cli.js",
-    "company-brain": "./dist/cli.js"
+    "opscanon": "dist/cli.js",
+    "ai-repo-readiness": "dist/cli.js",
+    "company-brain": "dist/cli.js"
   },
   "keywords": [
     "opscanon",
