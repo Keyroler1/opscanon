@@ -20,6 +20,12 @@ It is not enterprise search, a chatbot over documents, or generic document Q&A. 
 npm install -g opscanon
 ```
 
+Until the npm package is published, install the current public GitHub release:
+
+```bash
+npm install -g github:Keyroler1/opscanon
+```
+
 For local development:
 
 ```bash
@@ -174,7 +180,7 @@ The pipeline redacts common secret patterns before downstream processing. The MC
 
 Primary self-serve channels:
 
-- npm package: `opscanon`
+- npm package: `opscanon` once published
 - GitHub repo and releases: `Keyroler1/opscanon`
 - GitHub Action
 - Landing page: `https://keyroler1.github.io/opscanon/`

@@ -8,6 +8,12 @@ OpsCanon turns messy company knowledge into verified agent skills and MCP-ready 
 npm install -g opscanon
 ```
 
+Until the npm package is published, install from GitHub:
+
+```bash
+npm install -g github:Keyroler1/opscanon
+```
+
 For local development from this repo:
 
 ```bash

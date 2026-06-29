@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/Keyroler1/opscanon/issues"
   },
-  "homepage": "https://github.com/Keyroler1/opscanon#readme",
+  "homepage": "https://keyroler1.github.io/opscanon/",
   "files": [
     "dist",
     "action.yml",
