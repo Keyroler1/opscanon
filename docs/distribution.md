@@ -7,6 +7,7 @@ OpsCanon should be self-serve first. Services can be used to learn, but the core
 - npm package: `opscanon`
 - GitHub repo: `Keyroler1/opscanon`
 - GitHub Action: `Keyroler1/opscanon@v0`
+- Landing page: `https://keyroler1.github.io/opscanon/`
 - Static docs and examples in this repo.
 - MCP server packaged with the CLI.
 - Listings in MCP and agent-tooling directories after the package is public.

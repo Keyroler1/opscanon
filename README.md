@@ -177,6 +177,7 @@ Primary self-serve channels:
 - npm package: `opscanon`
 - GitHub repo and releases: `Keyroler1/opscanon`
 - GitHub Action
+- Landing page: `https://keyroler1.github.io/opscanon/`
 - Static docs and examples
 - Read-only MCP server
 
