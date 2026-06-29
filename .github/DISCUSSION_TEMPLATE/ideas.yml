@@ -1,0 +1,40 @@
+title: "[idea] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for connector ideas, buyer workflow feedback, hosted feature requests, or company-brain improvements that are not clear bugs yet.
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Workflow or source system
+      description: What company workflow, source system, or agent use case should OpsCanon support?
+      placeholder: "Example: Zendesk refund macros, Notion SOPs, Slack incident channels, Salesforce pricing exceptions..."
+    validations:
+      required: true
+  - type: textarea
+    id: current_process
+    attributes:
+      label: Current process
+      description: How do humans handle this today?
+    validations:
+      required: true
+  - type: textarea
+    id: agent_output
+    attributes:
+      label: Desired agent-ready output
+      description: What should OpsCanon produce so an AI agent can use this safely?
+      placeholder: "Example: source-cited skill, approval rule, cleanup checklist, MCP tool response, eval case..."
+    validations:
+      required: true
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      options:
+        - Needed for a pilot
+        - Useful for self-serve onboarding
+        - Nice to have
+    validations:
+      required: true

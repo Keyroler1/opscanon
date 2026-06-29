@@ -201,3 +201,9 @@ Paid features can come later: hosted dashboard, managed connectors, scheduled fr
 - `docs/buyers/`
 - `examples/`
 - `site/index.html`
+
+## Feedback
+
+- Bugs and reproducible CLI/Action issues: [open an issue](https://github.com/Keyroler1/opscanon/issues/new/choose).
+- Setup questions and MCP help: [start a Q&A discussion](https://github.com/Keyroler1/opscanon/discussions/categories/q-a).
+- Connector ideas and workflow feedback: [start an Ideas discussion](https://github.com/Keyroler1/opscanon/discussions/categories/ideas).

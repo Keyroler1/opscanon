@@ -1,0 +1,37 @@
+title: "[question] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for setup help, MCP client configuration, workflow questions, and interpreting generated packs.
+  - type: textarea
+    id: goal
+    attributes:
+      label: What are you trying to do?
+      description: Describe the workflow, repo, company docs, or MCP client you are using.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command or config
+      description: Paste the command, GitHub Action snippet, or MCP config. Redact secrets before posting.
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: output
+    attributes:
+      label: Output or generated file
+      description: Paste the relevant output, error, or generated report section. Redact customer data if needed.
+      render: text
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: OpsCanon version or install source
+      placeholder: "Example: github:Keyroler1/opscanon#v0 or opscanon@0.1.0"
+    validations:
+      required: false

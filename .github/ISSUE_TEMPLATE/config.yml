@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Setup questions and MCP help
+    url: https://github.com/Keyroler1/opscanon/discussions/categories/q-a
+    about: Ask questions about CLI setup, generated packs, GitHub Actions, or MCP client configuration.
+  - name: Product ideas and connector requests
+    url: https://github.com/Keyroler1/opscanon/discussions/categories/ideas
+    about: Discuss new connectors, workflow support, hosted features, and company-brain improvements.

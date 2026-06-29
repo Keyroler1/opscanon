@@ -1,0 +1,52 @@
+name: Bug report
+description: Report a reproducible OpsCanon CLI, Action, pack, or MCP issue.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What broke?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: List the smallest command sequence or GitHub Action config that reproduces the issue.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead? Paste errors or report snippets, with secrets redacted.
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or install source
+      placeholder: "Example: github:Keyroler1/opscanon#v0 or opscanon@0.1.0"
+    validations:
+      required: false
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      placeholder: "Example: Windows 11, macOS 15, Ubuntu 24.04, GitHub Actions ubuntu-latest"
+    validations:
+      required: false
