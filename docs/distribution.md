@@ -46,13 +46,7 @@ Before public launch:
 - Do a basic trademark/conflict search.
 - Publish a v0 release and verify `npm install -g opscanon`.
 
-Read-only checks on 2026-06-29:
-
-- npm registry returned `404 Not Found` for `opscanon`.
-- GitHub CLI could not resolve `Keyroler1/opscanon`.
-- DNS returned no records for `opscanon.com`, `opscanon.dev`, or `opscanon.ai`.
-
-These checks are not a substitute for reserving the package/repo/domain or doing legal review.
+See `docs/name-checks.md` for the current read-only name and availability notes.
 
 ## Missing Product Work
 
