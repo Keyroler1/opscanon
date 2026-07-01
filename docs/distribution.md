@@ -24,7 +24,7 @@ opscanon demo --out opscanon-demo
 Until npm publishing is complete, the same demo is installable from GitHub:
 
 ```bash
-npm install -g github:Keyroler1/opscanon
+npm install -g github:Keyroler1/opscanon#v0
 opscanon demo --out opscanon-demo
 ```
 

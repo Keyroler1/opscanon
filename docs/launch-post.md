@@ -9,7 +9,7 @@ Most "company brain" tools stop at search or chat over documents. OpsCanon does 
 Try it:
 
 ```bash
-npm install -g github:Keyroler1/opscanon
+npm install -g github:Keyroler1/opscanon#v0
 opscanon demo --out opscanon-demo
 ```
 

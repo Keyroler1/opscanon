@@ -11,7 +11,7 @@ npm install -g opscanon
 Until the npm package is published, install from GitHub:
 
 ```bash
-npm install -g github:Keyroler1/opscanon
+npm install -g github:Keyroler1/opscanon#v0
 ```
 
 For local development from this repo:

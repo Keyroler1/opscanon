@@ -23,7 +23,7 @@ npm install -g opscanon
 Until the npm package is published, install the current public GitHub release:
 
 ```bash
-npm install -g github:Keyroler1/opscanon
+npm install -g github:Keyroler1/opscanon#v0
 ```
 
 For local development:
@@ -196,11 +196,19 @@ Paid features can come later: hosted dashboard, managed connectors, scheduled fr
 - `docs/privacy-and-security.md`
 - `docs/distribution.md`
 - `docs/name-checks.md`
+- `docs/publishing.md`
 - `docs/launch-post.md`
 - `docs/demo-walkthrough.md`
 - `docs/buyers/`
 - `examples/`
 - `site/index.html`
+
+## Contributing And Support
+
+- `CONTRIBUTING.md`
+- `SECURITY.md`
+- `SUPPORT.md`
+- `CODE_OF_CONDUCT.md`
 
 ## Feedback
 

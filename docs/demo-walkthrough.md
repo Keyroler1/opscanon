@@ -9,7 +9,7 @@ Show: "From messy company export to agent-ready operating brain in 5 minutes."
 ## Setup
 
 ```bash
-npm install -g github:Keyroler1/opscanon
+npm install -g github:Keyroler1/opscanon#v0
 opscanon demo --out opscanon-demo
 ```
 
