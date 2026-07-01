@@ -53,7 +53,7 @@ runs:
         node "${{ github.action_path }}/dist/cli.js" "${args[@]}"
 
     - name: Upload OpsCanon artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: opscanon-report
         path: ${{ inputs.out }}
