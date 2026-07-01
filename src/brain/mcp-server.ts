@@ -228,8 +228,9 @@ export class McpStdioParser {
 
   constructor(private readonly onMessage: (message: Record<string, unknown>) => Promise<void>) {}
 
-  push(chunk: Buffer): void {
-    this.buffer = Buffer.concat([this.buffer, chunk])
+  push(chunk: Buffer | string): void {
+    const nextChunk = typeof chunk === 'string' ? Buffer.from(chunk, 'utf8') : chunk
+    this.buffer = Buffer.concat([this.buffer, nextChunk])
     void this.drain()
   }
 
