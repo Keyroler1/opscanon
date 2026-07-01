@@ -32,8 +32,8 @@ jobs:
       - run: npm run build
       - run: npm pack --dry-run
 
-  publish-dry-run:
-    name: Publish dry run
+  package-dry-run:
+    name: Package dry run
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -42,4 +42,4 @@ jobs:
           node-version: 24.x
           cache: npm
       - run: npm ci
-      - run: npm publish --dry-run
+      - run: npm pack --dry-run

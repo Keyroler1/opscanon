@@ -29,7 +29,11 @@ jobs:
       - run: npm ci
       - name: Dry run
         if: ${{ inputs.dry-run == 'true' }}
-        run: npm publish --dry-run
+        run: |
+          npm run test:coverage
+          npm run typecheck
+          npm run build
+          npm pack --dry-run
       - name: Publish
         if: ${{ inputs.dry-run == 'false' }}
         env:

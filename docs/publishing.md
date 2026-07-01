@@ -13,7 +13,7 @@ npm publish
 Before publishing, verify:
 
 ```bash
-npm publish --dry-run
+npm pack --dry-run
 ```
 
 ## GitHub Action Publish
@@ -33,3 +33,4 @@ The workflow runs `npm publish --provenance` for the real publish step.
 ## Current Status
 
 `opscanon@0.1.0` is live on npm. Local `npm whoami` should return the publishing account before future releases.
+Future releases must bump the package version before running `npm publish`.

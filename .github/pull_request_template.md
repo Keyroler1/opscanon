@@ -11,7 +11,7 @@ Explain the problem, workflow, or safety gap this addresses.
 - [ ] `npm test`
 - [ ] `npm run typecheck`
 - [ ] `npm run build`
-- [ ] `npm publish --dry-run` when package, docs, action, or release files change
+- [ ] `npm pack --dry-run` when package, docs, action, or release files change
 
 ## Safety
 
