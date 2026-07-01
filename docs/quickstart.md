@@ -8,7 +8,7 @@ OpsCanon turns messy company knowledge into verified agent skills and MCP-ready 
 npm install -g opscanon
 ```
 
-Until the npm package is published, install from GitHub:
+To test the latest tagged GitHub release directly:
 
 ```bash
 npm install -g github:Keyroler1/opscanon#v0
@@ -77,7 +77,7 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: Keyroler1/opscanon@v0
         with:
           path: .

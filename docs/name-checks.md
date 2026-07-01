@@ -2,12 +2,12 @@
 
 These are basic launch checks for `OpsCanon`. They are not legal advice and do not reserve a trademark, domain, npm package, or GitHub name.
 
-Checked on 2026-06-29.
+Checked on 2026-07-01.
 
 ## Completed
 
 - GitHub repo `Keyroler1/opscanon`: created and public.
-- npm package `opscanon`: public registry returned `404 Not Found`; actual reservation/publish is still blocked by local npm auth.
+- npm package `opscanon`: published as `opscanon@0.1.0`.
 - Landing page URL: `https://keyroler1.github.io/opscanon/` returns HTTP 200.
 - `opscanon.com`: RDAP returned 404 and DNS returned no records.
 - `opscanon.ai`: RDAP returned 404 and DNS returned no records.
@@ -23,4 +23,4 @@ Checked on 2026-06-29.
 - Buy the preferred domain through a registrar.
 - Run a real trademark search through USPTO/TESS and broader commercial databases.
 - Decide whether to file a trademark application.
-- Publish or reserve the npm package after `npm login`.
+- Keep npm ownership and release access under the publishing account.

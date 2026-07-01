@@ -1,6 +1,6 @@
 # Publishing OpsCanon
 
-The package is ready to publish, but npm requires an authenticated account that owns or can reserve `opscanon`.
+The package is published on npm as `opscanon`.
 
 ## Local Publish
 
@@ -30,6 +30,6 @@ To use it:
 
 The workflow runs `npm publish --provenance` for the real publish step.
 
-## Current Blocker
+## Current Status
 
-Local `npm whoami` must succeed before local publishing can happen. If it returns `ENEEDAUTH`, run `npm login`.
+`opscanon@0.1.0` is live on npm. Local `npm whoami` should return the publishing account before future releases.

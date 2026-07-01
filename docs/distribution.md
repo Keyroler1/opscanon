@@ -4,7 +4,7 @@ OpsCanon should be self-serve first. Services can be used to learn, but the core
 
 ## Channels
 
-- npm package: `opscanon` once published
+- npm package: `opscanon`
 - GitHub repo: `Keyroler1/opscanon`
 - GitHub Action: `Keyroler1/opscanon@v0`
 - Landing page: `https://keyroler1.github.io/opscanon/`
@@ -21,7 +21,7 @@ npm install -g opscanon
 opscanon demo --out opscanon-demo
 ```
 
-Until npm publishing is complete, the same demo is installable from GitHub:
+The same demo is installable from the tagged GitHub release:
 
 ```bash
 npm install -g github:Keyroler1/opscanon#v0
